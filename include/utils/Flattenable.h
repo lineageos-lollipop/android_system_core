@@ -19,6 +19,7 @@
 
 
 #include <stdint.h>
+#include <string.h>
 #include <sys/types.h>
 #include <utils/Errors.h>
 #include <utils/Debug.h>
@@ -44,7 +45,12 @@ public:
 
     template<int N>
     static size_t align(void*& buffer) {
-        return align<N>( const_cast<void const*&>(buffer) );
+        COMPILE_TIME_ASSERT_FUNCTION_SCOPE( !(N & (N-1)) );
+        void* b = buffer;
+        buffer = reinterpret_cast<void*>((uintptr_t(buffer) + (N-1)) & ~(N-1));
+        size_t delta = size_t(uintptr_t(buffer) - uintptr_t(b));
+        memset(b, 0, delta);
+        return delta;
     }
 
     static void advance(void*& buffer, size_t& size, size_t offset) {
