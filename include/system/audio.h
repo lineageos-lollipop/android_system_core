@@ -250,7 +250,7 @@ typedef enum {
     AUDIO_FORMAT_VORBIS_SUB_NONE         = 0x0,
 } audio_format_vorbis_sub_fmt_t;
 
-#ifdef QCOM_HARDWARE
+#ifdef DOLBY_UDC
 /* DOLBY (AC3/EAC3) sub format field definition: specify dual-mono acmod... */
 typedef enum {
      AUDIO_FORMAT_DOLBY_SUB_NONE         = 0x0,
@@ -315,7 +315,7 @@ typedef enum {
                                         AUDIO_FORMAT_PCM_SUB_8_24_BIT),
     AUDIO_FORMAT_PCM_FLOAT           = (AUDIO_FORMAT_PCM |
                                         AUDIO_FORMAT_PCM_SUB_FLOAT),
-#ifdef QCOM_HARDWARE
+#ifdef DOLBY_UDC
     AUDIO_FORMAT_AC3_DM              =  (AUDIO_FORMAT_AC3 |
                                           AUDIO_FORMAT_DOLBY_SUB_DM),
     AUDIO_FORMAT_E_AC3_DM             =  (AUDIO_FORMAT_E_AC3 |
@@ -388,7 +388,7 @@ enum {
     AUDIO_CHANNEL_OUT_MONO     = AUDIO_CHANNEL_OUT_FRONT_LEFT,
     AUDIO_CHANNEL_OUT_STEREO   = (AUDIO_CHANNEL_OUT_FRONT_LEFT |
                                   AUDIO_CHANNEL_OUT_FRONT_RIGHT),
-#ifdef QCOM_HARDWARE
+#ifdef DOLBY_UDC
     AUDIO_CHANNEL_OUT_2POINT1  = (AUDIO_CHANNEL_OUT_FRONT_LEFT |
                                   AUDIO_CHANNEL_OUT_FRONT_RIGHT |
                                   AUDIO_CHANNEL_OUT_FRONT_CENTER),
@@ -403,7 +403,7 @@ enum {
                                   AUDIO_CHANNEL_OUT_FRONT_RIGHT |
                                   AUDIO_CHANNEL_OUT_SIDE_LEFT |
                                   AUDIO_CHANNEL_OUT_SIDE_RIGHT),
-#ifdef QCOM_HARDWARE
+#ifdef DOLBY_UDC
     AUDIO_CHANNEL_OUT_SURROUND = (AUDIO_CHANNEL_OUT_FRONT_LEFT |
                                   AUDIO_CHANNEL_OUT_FRONT_RIGHT |
                                   AUDIO_CHANNEL_OUT_FRONT_CENTER |
@@ -425,7 +425,7 @@ enum {
                                   AUDIO_CHANNEL_OUT_LOW_FREQUENCY |
                                   AUDIO_CHANNEL_OUT_SIDE_LEFT |
                                   AUDIO_CHANNEL_OUT_SIDE_RIGHT),
-#ifdef QCOM_HARDWARE
+#ifdef DOLBY_UDC
     AUDIO_CHANNEL_OUT_6POINT1  = (AUDIO_CHANNEL_OUT_FRONT_LEFT |
                                   AUDIO_CHANNEL_OUT_FRONT_RIGHT |
                                   AUDIO_CHANNEL_OUT_FRONT_CENTER |
